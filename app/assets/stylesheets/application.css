@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
- 
  body {
     background-color: #fff;
     color: #333;
@@ -34,3 +33,8 @@ label {
 .field, .action {
     margin-bottom: 10px;
 }
+
+.actions {
+    display: block;
+}
+
