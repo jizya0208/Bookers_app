@@ -25,7 +25,7 @@
     
     <h2 class="heading">New Book</h2>
     <p>Title</p>
-    <%= form_with model:@book, url:new_book_path, local:true do |f| %>
+    <%= form_with model:@book, url:"/books", local:true do |f| %>
       <%= f.text_field :title %>
       <%= f.text_area :body %>
       <%= f.submit 'Create Book' %>
