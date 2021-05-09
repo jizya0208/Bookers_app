@@ -1,3 +1,5 @@
-<%= form_with model:@book local:true do |f| %>
+<p>Title: <span><%= @book.title %></span></p>
+<p>Body: <span><%= @book.body %></span></p>
 
-<% end %>
+<%= link_to 'Edit', edit_book_path(@book) %>
+<%= link_to 'Back', books_path %>
