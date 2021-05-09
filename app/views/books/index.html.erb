@@ -21,12 +21,24 @@
         <% @books.each do |book| %>
           <p><%= book.body %></p>
         <% end %>
-        </div>
+      </div>
+      
+      <div class="option">
+        <% @books.each do |book| %>
+          <%= link_to 'Show', book_path(book) %>
+          <%= link_to 'Edit', edit_book_path(book) %>
+          <%= link_to 'Destroy', book_path(book), method: :delete, "data-confirm" => "本当に削除しますか" %>
+        <% end %>
+      </div>
+    </div>    
+        
     
     <h2 class="heading">New Book</h2>
-    <p>Title</p>
+  
     <%= form_with model:@book, url:"/books", local:true do |f| %>
+      <p>Title</p>
       <%= f.text_field :title %>
+      <p>Body</p>
       <%= f.text_area :body %>
       <%= f.submit 'Create Book' %>
     <% end %>
