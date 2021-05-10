@@ -7,12 +7,18 @@
   </head>
   
   <body>
+    <% if flash[:notice] %>
+      <p id="notice">
+      <%= flash[:notice] %>
+      </p>
+    <% end %>
+    
     <h1>Books</h1>
     <table>
       <thead>
         <tr>        
           <th>Title</th>
-          <th>Books</th>
+          <th>Body</th>
           <td colspan="3"></td>
         </tr>
       </thead>
@@ -35,7 +41,7 @@
       </tbody>
     </table>
     
-    <h2 class="new_book">New Book</h2>
+    <h2 class="new_book">New book</h2>
     
     <% if @book.errors.any? %>
       <div id="error_explanation">
@@ -47,6 +53,7 @@
         </ul>
       </div>
     <% end %>
+    
   
     <%= form_with model:@book, url:"/books", local:true do |f| %>
       <div class="field">      

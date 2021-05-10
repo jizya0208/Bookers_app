@@ -4,8 +4,8 @@
   </p>
 <% end %>
 
-<p>Title: <span><%= @book.title %></span></p>
-<p>Body: <span><%= @book.body %></span></p>
+<p><strong>Title: </strong><span><%= @book.title %></span></p>
+<p><strong>Body: </strong><span><%= @book.body %></span></p>
 
-<%= link_to 'Edit', edit_book_path(@book) %>
+<%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
