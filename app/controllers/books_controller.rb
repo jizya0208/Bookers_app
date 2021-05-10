@@ -10,7 +10,7 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully"
       redirect_to book_path(book)
     else
-      @books = Book.all
+      @books = Book.all     #もう一度投稿一覧に戻る際に@booksが必要
       render 'books/index'
     end
   end
@@ -24,8 +24,8 @@ class BooksController < ApplicationController
   end
   
   def update
-    book = Book.find(params[:id])
-    if book.update(book_params)
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
       flash[:notice] = "Book was successfully"
       redirect_to books_path
     else
